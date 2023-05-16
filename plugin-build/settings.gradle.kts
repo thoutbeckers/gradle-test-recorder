@@ -18,19 +18,19 @@ dependencyResolutionManagement {
     }
 }
 
-plugins {
-    `gradle-enterprise`
-}
+//plugins {
+//    `gradle-enterprise`
+//}
+//
+//gradleEnterprise {
+//    buildScan {
+//        termsOfServiceUrl = "https://gradle.com/terms-of-service"
+//        termsOfServiceAgree = "yes"
+//        // publishAlwaysIf(System.getenv("GITHUB_ACTIONS") == "true")
+//        // publishOnFailure()
+//    }
+//}
 
-gradleEnterprise {
-    buildScan {
-        termsOfServiceUrl = "https://gradle.com/terms-of-service"
-        termsOfServiceAgree = "yes"
-        publishAlwaysIf(System.getenv("GITHUB_ACTIONS") == "true")
-        publishOnFailure()
-    }
-}
-
-rootProject.name = ("com.ncorti.kotlin.gradle.template")
+rootProject.name = ("rs.houtbecke.gradle.recorder")
 
 include(":plugin")

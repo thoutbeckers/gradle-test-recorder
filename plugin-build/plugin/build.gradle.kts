@@ -4,23 +4,25 @@ plugins {
     kotlin("jvm")
     `java-gradle-plugin`
     alias(libs.plugins.pluginPublish)
+    alias(libs.plugins.kover)
 }
 
 dependencies {
     implementation(kotlin("stdlib"))
     implementation(gradleApi())
+    implementation(libs.coroutines)
 
     testImplementation(libs.junit)
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 }
 
@@ -32,7 +34,7 @@ gradlePlugin {
             version = property("VERSION").toString()
             description = property("DESCRIPTION").toString()
             displayName = property("DISPLAY_NAME").toString()
-            tags.set(listOf("plugin", "gradle", "sample", "template"))
+            tags.set(listOf("plugin", "gradle", "video", "android", "emulator"))
         }
     }
 }
@@ -55,3 +57,7 @@ tasks.create("setupPluginUploadFromEnvironment") {
         System.setProperty("gradle.publish.secret", secret)
     }
 }
+
+kover {
+}
+

@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.detekt)
     alias(libs.plugins.ktlint)
     alias(libs.plugins.versionCheck)
+    alias(libs.plugins.kover)
 }
 
 allprojects {
@@ -44,6 +45,10 @@ tasks.withType<Detekt>().configureEach {
 
 tasks.register("clean", Delete::class.java) {
     delete(rootProject.buildDir)
+}
+
+kover {
+
 }
 
 tasks.wrapper {
