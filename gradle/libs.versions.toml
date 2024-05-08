@@ -1,18 +1,18 @@
 [versions]
 detekt = "1.22.0"
-kotlin = "1.8.21"
-ktlintGradle = "11.3.1"
-pluginPublish = "1.1.0"
+kotlin = "1.9.23"
+ktlintGradle = "12.1.1"
+pluginPublish = "1.2.1"
 versionCheck = "0.46.0"
-android = "7.4.1"
+android = "8.2.2"
 kover = "0.7.0"
-compose = "1.4.3"
+compose = "1.6.7"
 composeCompiler = "1.4.7"
-androidXActivity = "1.7.0"
+androidXActivity = "1.9.0"
 androidXTest = "1.5.0"
-coroutines = "1.7.0"
+coroutines = "1.7.3"
 junit = "4.13.2"
-composeMaterial = "1.0.1"
+composeMaterial = "1.2.1"
 
 [plugins]
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }

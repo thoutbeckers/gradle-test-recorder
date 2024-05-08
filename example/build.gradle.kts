@@ -5,13 +5,13 @@ plugins {
 }
 
 kotlin {
-    android()
-    ios()
+    androidTarget()
+    applyDefaultHierarchyTemplate()
 }
 
 android {
-    setCompileSdkVersion(33)
-    namespace = "rs.houtbecke.example"
+    setCompileSdkVersion(34)
+    namespace = "splendo.gradle.plugin.example"
 
     buildFeatures {
         compose = true
