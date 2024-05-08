@@ -44,7 +44,7 @@ tasks.withType<Detekt>().configureEach {
 }
 
 tasks.register("clean", Delete::class.java) {
-    delete(rootProject.buildDir)
+    delete(rootProject.layout.buildDirectory)
 }
 
 kover {
