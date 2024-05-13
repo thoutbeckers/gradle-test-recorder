@@ -11,7 +11,7 @@ kotlin {
 
 android {
     setCompileSdkVersion(34)
-    namespace = "splendo.gradle.plugin.example"
+    namespace = "rs.houtbecke.example"
 
     buildFeatures {
         compose = true
