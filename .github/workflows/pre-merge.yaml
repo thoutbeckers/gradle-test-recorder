@@ -53,7 +53,7 @@ jobs:
           force-avd-creation: false
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: true
-          arch: arm64
+          arch: arm64-v8a
           disk-size: 3G
           ram-size: 3G
           heap-size: 1500M
@@ -75,7 +75,7 @@ jobs:
           force-avd-creation: false
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot-save -noaudio -no-boot-anim -camera-back none
           disable-animations: true
-          arch: arm64
+          arch: arm64-v8a
           disk-size: 3G
           ram-size: 3G
           heap-size: 1500M
