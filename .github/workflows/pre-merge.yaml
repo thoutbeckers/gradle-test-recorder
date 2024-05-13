@@ -21,7 +21,7 @@ jobs:
 #        run: ./gradlew preMerge --continue
 
   test_android:
-    runs-on: [ macos-latest ]
+    runs-on: [ macos-14 ]
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -42,18 +42,18 @@ jobs:
           path: |
             ~/.android/avd/*
             ~/.android/adb*
-          key: avd.v1-33
+          key: avd.v1-34
 
       - name: Create AVD and generate snapshot for caching
         if: steps.avd-cache.outputs.cache-hit != 'true'
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 33
+          api-level: 34
           target: google_apis
           force-avd-creation: false
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: true
-          arch: x86_64
+          arch: arm64
           disk-size: 3G
           ram-size: 3G
           heap-size: 1500M
@@ -70,12 +70,12 @@ jobs:
       - name: Run tests and record video
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 33
+          api-level: 34
           target: google_apis
           force-avd-creation: false
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot-save -noaudio -no-boot-anim -camera-back none
           disable-animations: true
-          arch: x86_64
+          arch: arm64
           disk-size: 3G
           ram-size: 3G
           heap-size: 1500M
@@ -86,7 +86,7 @@ jobs:
             ./gradlew example:recordAndroid example:connectedDebugAndroidTest
 
       - name: Upload video
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v4
         with:
           name: out.mp4
           path: example/out.mp4
