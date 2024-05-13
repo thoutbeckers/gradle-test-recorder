@@ -5,12 +5,12 @@ plugins {
 }
 
 kotlin {
-    android()
-    ios()
+    androidTarget()
+    applyDefaultHierarchyTemplate()
 }
 
 android {
-    setCompileSdkVersion(33)
+    setCompileSdkVersion(34)
     namespace = "rs.houtbecke.example"
 
     buildFeatures {
