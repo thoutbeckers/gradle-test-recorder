@@ -71,8 +71,9 @@ fun BouncingBallsApp(initialBallsCount: Int = 5) {
     LaunchedEffect(Unit) {
         var lastTime = 0L
         var dt = 0L
+        val start = System.currentTimeMillis()
 
-        while (true) {
+        while (System.currentTimeMillis() < start + 5000) {
             withFrameNanos { time ->
                 dt = time - lastTime
                 if (lastTime == 0L) {
